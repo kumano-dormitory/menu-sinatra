@@ -1,11 +1,35 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8" />
-    <title>寮食メニュー</title>
-  </head>
-  <body>
-    <h1>寮食メニュー</h1>
-    <p>Hello Sinatra</p>
-  </body>
-</html>
+<h1>今週の寮食メニュー</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th></th>
+      <th>昼食</th>
+      <th>昼食（麺）</th>
+      <th>夕食</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @menus.each do |menu| %>
+      <tr>
+        <th><%= menu.day.strftime("%m月 %d日") + ['(日)','(月)','(火)','(水)','(木)','(金)','(土)'].at(menu.day.wday) %></th>
+        <td><pre><%= menu.lunch1 %></pre></td>
+        <td><pre><%= menu.lunch2 %></pre></td>
+        <td><pre><%= menu.dinner %></pre></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<style>
+tr:nth-child(2n) {
+background: #eee;
+}
+tr:nth-child(2n+1) {
+background: #ddf;
+}
+pre {
+background: transparent !important;
+}
+</style>

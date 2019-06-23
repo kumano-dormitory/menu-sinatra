@@ -1,0 +1,26 @@
+<h1>edit menu</h1>
+<form class="new-form" action="/menus/<%= @menu.id %>" method="patch">
+  <% if @menu.errors.any? %>
+  <div class="error">
+  </div>
+  <% end %>
+  <div class="field">
+    <label for="menu-day">日時</label>
+    <input type="date" name="day" id="menu-day" value="<%= @menu.day %>">
+  </div>
+  <div class="fieldset">
+    <label for="menu-lunch1">昼のメニュー</label>
+    <textarea name="lunch1" id="menu-lunch1"><%= @menu.lunch1 %></textarea>
+  </div>
+  <div class="fieldset">
+    <label for="menu-lunch2">昼のメニュー(麺)</label>
+    <textarea name="lunch2" id="menu-lunch2"><%= @menu.lunch2 %></textarea>
+  </div>
+  <div class="fieldset">
+    <label for="menu-dinner">夜のメニュー</label>
+    <textarea name="dinner" id="menu-dinner"><%= @menu.dinner %></textarea>
+  </div>
+  <div class="actions">
+    <button type="submit" name="action" value="">新規作成</button>
+  </div>
+</form>

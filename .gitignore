@@ -12,3 +12,4 @@
 
 vendor/bin
 .bundle
+*.sqlite3

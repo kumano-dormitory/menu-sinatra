@@ -1,0 +1,22 @@
+<h1>show menu</h1>
+<p>
+  <strong>Day:</strong>
+  <%= @menu.day %>
+</p>
+
+<p>
+  <strong>Lunch1:</strong>
+  <%= @menu.lunch1 %>
+</p>
+
+<p>
+  <strong>Lunch2:</strong>
+  <%= @menu.lunch2 %>
+</p>
+
+<p>
+  <strong>Dinner:</strong>
+  <%= @menu.dinner %>
+</p>
+<a href="/menus/<%= @menu.id %>/edit">Edit menu</a>
+<a href="/menus">Back</a>
