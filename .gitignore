@@ -9,3 +9,6 @@
 /coverage
 .yardoc
 /doc
+
+vendor/bin
+.bundle
