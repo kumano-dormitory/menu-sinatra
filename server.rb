@@ -2,6 +2,15 @@ require 'sinatra'
 require 'sinatra/reloader'
 require './model/menu.rb'
 
+# index for mobile
+get '/mobiles' do
+  @menus = Menu.where("day >= :start AND day <= :end",
+                        {start: (Date.today + 2).beginning_of_week, end: (Date.today + 2).end_of_week}
+                       ).order("day ASC, id DESC").group(:day)
+  erb :mobile, layout: :application
+end
+
+# index
 get '/menus' do
   @menus = Menu.where("day >= :start AND day <= :end",
                         {start: (Date.today + 2).beginning_of_week, end: (Date.today + 2).end_of_week}
