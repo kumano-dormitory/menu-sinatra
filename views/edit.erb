@@ -1,5 +1,6 @@
 <h1>edit menu</h1>
-<form class="new-form" action="/menus/<%= @menu.id %>" method="patch">
+<form class="new-form" action="/menus/<%= @menu.id %>" method="post">
+  <input type="hidden" value="patch" name="_method">
   <% if @menu.errors.any? %>
   <div class="error">
   </div>
@@ -21,6 +22,6 @@
     <textarea name="dinner" id="menu-dinner"><%= @menu.dinner %></textarea>
   </div>
   <div class="actions">
-    <button type="submit" name="action" value="">新規作成</button>
+    <button type="submit" name="action" value="">保存</button>
   </div>
 </form>
